@@ -1,0 +1,72 @@
+.tile {
+    height: 20px;
+    width: 20px;
+    background-color: lightgray;
+    border-style: outset;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explored {
+    border-style: inset;
+}
+
+.flagged::before {
+    content: "🌷";
+}
+
+.row {
+    display: flex;
+
+}
+
+.board-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.board-display p {
+    margin: 0;
+}
+
+.board-display > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+div.modal-screen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+div.modal-overlay {
+    width: 200px;
+    height: 150px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.explored.bombed::before {
+    content: "💣";
+}
